@@ -5,6 +5,7 @@ use App\Mahasiswa;
 use App\Prodi;
 use DataTables;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables as DataTablesDataTables;
 
 class MahasiswaController extends Controller
 {
@@ -25,8 +26,8 @@ class MahasiswaController extends Controller
      return Datatables::of($mhs)
              ->addIndexColumn()
              ->addColumn('action', function ($mhs) {
-                 $action = '<a class="text-primary"href="/mhs/edit/'.$mhs->nim.'">Edit</a>';
-                 $action .= ' | <a class="text-danger"href="/mhs/delete/'.$mhs->nim.'">Hapus</a>';
+                 $action = '<a class="text-succes " href="/mhs/edit/'.$mhs->nim.'">Edit</a>';
+                 $action .= ' | <a class="text-danger" href="/mhs/delete/'.$mhs->nim.'">Hapus</a>';
                  return $action;
             })
              ->make();
